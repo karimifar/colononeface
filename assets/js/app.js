@@ -325,7 +325,7 @@ $(document).mousemove(function(event){
 
 })
 
-document.addEventListener('touchmove', function(event) {
+document.addEventListener('touchstart', function(event) {
     var svgW = document.getElementById("svgDiv").offsetWidth;
     var svgH = document.getElementById("svgDiv").offsetHeight;
     maxX = window.innerWidth;
