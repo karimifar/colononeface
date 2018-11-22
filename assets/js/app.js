@@ -280,7 +280,7 @@ TweenLite.set(one, {
   x: oneX,
   y: oneY
 });
-$(document).mousemove(function(event){
+$(document).on("mousemove click" , function(event){
     var svgW = document.getElementById("svgDiv").offsetWidth;
     var svgH = document.getElementById("svgDiv").offsetHeight;
     maxX = window.innerWidth;
@@ -325,50 +325,6 @@ $(document).mousemove(function(event){
 
 })
 
-document.addEventListener('touchstart', function(event) {
-    var svgW = document.getElementById("svgDiv").offsetWidth;
-    var svgH = document.getElementById("svgDiv").offsetHeight;
-    maxX = window.innerWidth;
-    maxY = window.innerHeight;
-    var colonX = 0.15*maxX + 0.1*svgW + 0.59*0.8*svgW
-    var colonY = 0.15*maxX + 0.57*svgH 
-
-    console.log(colonX,colonY)
-    var x = event.clientX;
-    var y = event.clientY;
-    console.log(x,y)
-
-    var moveX = (x-colonX)/15
-    var moveY = (y-colonY)/10
-    if(moveY<= -18){
-        moveY= -18
-    }
-    if(moveY >= 30){
-        moveY=30
-    }
-    if(moveX<= -30){
-        moveX= -30
-    }
-    if(moveX >= 45){
-        moveX=45
-    }
-    console.log("YOOO",moveX, moveY)
-    // $("#colon").css({
-    //     transform:" matrix(0, 1, -1, 0,"+ 112.8842+moveX +","+ 134.6087+moveY+")"
-    // });
-    // var offset = translate($("#colon"), {top:moveX, y:moveY})
-    // TweenMax.set("#colon", {attr:{x:0, y:0}})
-    TweenLite.to(colon, 0.1, {
-        x: startX+moveX,
-        y: startY+moveY
-    });
-    TweenLite.to(one, 0.1,{
-        x: oneX+moveX/1.5,
-        y: oneY+moveY/1.5
-     })
-    TweenLite.to(face, 0.1, {x:moveX/4, y:moveY/4})
-
-})
 
 
 var tl = new TimelineMax({repeat: -1});
