@@ -1,0 +1,180 @@
+body{
+    padding: 0 20%;
+}
+*{
+    box-sizing: border-box;
+    font-family: "museo-sans-rounded";
+}
+.wrapper{
+    margin-top: 20%;
+}
+
+.info-icon{
+    margin: 0 auto;
+    text-align: center;
+    display: block;
+    font-size: 20px;
+    color: #555;
+    margin-bottom: -10px;
+    background-color: white;
+    width: 20px;
+}
+
+.info{
+    margin: 0% auto;
+    margin-top: 15%;
+    width: 300px;
+    border-bottom: #ddd 1px solid;
+}
+
+
+.face-line{
+    fill:none;
+    stroke:#000000;
+    stroke-width:12;
+    stroke-linecap:round;
+    stroke-miterlimit:10;
+}
+.type{
+    font-family:'Merriweather';
+    font-size:111.0161px;
+    letter-spacing:-3;
+    text-shadow: white 0px 0px 4px;
+    stroke: white;
+    stroke-width: 0.5px;
+}
+
+#svgDiv{
+    display: inline-block;
+    width: 35%;
+    /* padding: 0 10%; */
+    margin-right: 10%;
+    vertical-align: top;
+}
+
+#colon{
+    position: relative;
+    /* transform: matrix(0, 1, -1, 0, 112.8842, 134.6087) */
+}
+#listDiv{
+    display: inline-block;
+    width: 55%;
+    padding-top: 18%;
+    vertical-align: top;
+    transition: all 0.3s ease-in-out;
+    max-width: 340px;
+}
+
+
+ul { 
+    width: 100%;
+    /* border-bottom: 1px #000 solid; */
+    padding: 10px;
+    margin: 0;
+    font-size: 26px;
+    max-height: 300px;
+    overflow: auto;
+    transition: all 0.1s ease-in-out;
+    background: black;
+}
+
+ul:focus, li:focus{
+    /* outline: none; */
+}
+.openlist{
+    /* border-radius: 5px; */
+    border: 1px #000 solid;
+    background: black;
+} 
+
+ul li { 
+    padding: 9px 10px;
+    z-index: 2;
+    margin: 0; 
+    cursor: pointer;
+    transition: all 0.1s ease-in-out;
+}
+ul li:not(.init) {
+    width: auto; 
+    display: none; 
+    background: white; 
+}
+ul li.selected:not(.init){
+    color: #999
+}
+ul li:not(.init):hover{
+    background: #111;
+    color: white; 
+}
+
+li.init {
+    cursor: pointer;
+    padding: 5px 10px;
+    background: white;
+    color: black;
+    font-weight: 900;
+    font-size: 36px;
+}
+
+
+/* width */
+::-webkit-scrollbar {
+    width: 15px;
+    padding: 0;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: white; 
+    margin-left: 5px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #eee; 
+    border-radius: 1px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #ddd; 
+}
+
+
+@media only screen and (max-width: 1000px) and (min-width: 700px){
+    ul{
+        font-size: 18px;
+    }
+    li.init{
+        font-size: 24px;
+    }
+    #svgDiv{
+        width: 40%;
+        margin-right: 10%;
+    }
+    #listDiv{
+        width: 50%;
+    }
+
+}
+
+
+@media only screen and (max-width: 700px) {
+    #svgDiv{
+        width:100%;
+        margin:0;
+    }
+    #listDiv{
+        width:100%;
+        max-width: unset;
+        padding-top: 10%;
+    }
+}
+@media only screen and (max-width: 500px) {
+    ul{
+        font-size: 14px;
+    }
+    li.init{
+        font-size: 18px;
+    }
+}
