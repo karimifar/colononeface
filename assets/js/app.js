@@ -139,6 +139,15 @@ var fontArray = [
     "Merriweather"
 ]
 
+var externalFonts= [
+    "Museo-sans",
+    "Museo-sans-rounded",
+    "Nimbus-sans",
+    "Fatfrank",
+    "Rucksack",
+    "Shackleton",
+    "Cooper-black-std",
+]
 var availableFonts= []
 var Detector = function() {
 // a font will be compared against all the three default fonts.
@@ -189,13 +198,17 @@ Detector();
 
 var fontCount = 0;
 function detectAppendListen(){
+    for(var i=0; i< externalFonts.length; i++){
+        createOption(externalFonts[i])
+    }
     for(var i = 0; i<fontArray.length; i++){
         if (detect(fontArray[i])){
                 fontCount++;
                 availableFonts.push(fontArray[i])
-                createOption(fontArray[i], i+3)
+                createOption(fontArray[i])
         }
     }
+    
 }
 detectAppendListen();
 
@@ -209,8 +222,8 @@ detectAppendListen();
 
 
 
-function createOption(font, i){
-    var option = $("<li tabindex=" + i +" class='font-option' data-value='"+font+"'>"+font +"</li>");
+function createOption(font){
+    var option = $("<li class='font-option' data-value='"+font+"'>"+font +"</li>");
     $("#selectFont").append(option)
 }
 
@@ -262,10 +275,10 @@ var face = document.querySelector("#face");
 var maxX = window.innerWidth;
 var maxY = window.innerHeight;
 
-var startX= 130;
+var startX= 135;
 var startY= 195;
 
-var oneX= 125;
+var oneX= 120;
 var oneY= 240;
 
 TweenLite.set(colon, {
