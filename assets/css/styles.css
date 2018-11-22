@@ -160,6 +160,9 @@ li.init {
 
 
 @media only screen and (max-width: 700px) {
+    .info{
+        width:200px;
+    }
     #svgDiv{
         width:100%;
         margin:0;
