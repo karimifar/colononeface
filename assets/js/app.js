@@ -148,7 +148,15 @@ var externalFonts= [
     "Shackleton",
     "Cooper-black-std",
 ]
-var availableFonts= []
+var availableFonts= [
+    "Museo-sans",
+    "Museo-sans-rounded",
+    "Nimbus-sans",
+    "Fatfrank",
+    "Rucksack",
+    "Shackleton",
+    "Cooper-black-std",
+]
 var Detector = function() {
 // a font will be compared against all the three default fonts.
 // and if it doesn't match all 3 then that font is not available.
@@ -198,16 +206,18 @@ Detector();
 
 var fontCount = 0;
 function detectAppendListen(){
-    for(var i=0; i< externalFonts.length; i++){
-        createOption(externalFonts[i])
-    }
+
     for(var i = 0; i<fontArray.length; i++){
         if (detect(fontArray[i])){
                 fontCount++;
-                availableFonts.push(fontArray[i])
-                createOption(fontArray[i])
+                availableFonts.push(fontArray[i]);
+                availableFonts.sort();
         }
     }
+    for(var i=0; i< availableFonts.length; i++){
+        createOption(availableFonts[i])
+    }
+    
     
 }
 detectAppendListen();
@@ -254,6 +264,8 @@ $("ul").on("click", "li:not(.init)", function() {
 $("body").on("mouseover", "#selectFont li", function() {
     var selectedFont = $(this).attr('data-value')
     $(".type").css("font-family", selectedFont)
+    $("ul").children('.init').html($(this).html());
+
 });
 
 
@@ -337,9 +349,39 @@ $(document).on("mousemove click" , function(event){
     TweenLite.to(face, 0.1, {x:moveX/4, y:moveY/4})
 
 })
+function closeModalAnimation(){
+    TweenLite.to("#info-modal", 0.3, {scale:0, opacity:0, transformOrigin:"50% 90%", ease: Back.easeIn})
+}
+function openModalAnimation(){
+    TweenLite.fromTo("#info-modal", 0.2, {scale:0, delay:0.1, transformOrigin:"50% 90%"},{scale:1, opacity:1, ease:Power4.easeOut})
+}
+$("#info-icon").on("click", function(){
+    $(".modal-overlay").toggleClass("closed")
+    if($("#info-modal").hasClass("closed")){
+        openModalAnimation();
+        $("#info-modal").toggleClass("closed")
+        
+    }else{
+        closeModalAnimation();
+        setTimeout(() => {
+            $("#info-modal").toggleClass("closed")
+        }, 500); 
+    }
 
-
-
+})
+$('html').click(function(e) {                    
+   if(!$(e.target).hasClass('info-modal') && !$(e.target).hasClass("info-icon"))
+   {
+       console.log($(e.target))
+        if (!$("#info-modal").hasClass("closed")){
+            $(".modal-overlay").toggleClass("closed")
+            closeModalAnimation();
+            setTimeout(() => {
+                $("#info-modal").toggleClass("closed")
+            }, 500); 
+        }             
+   }
+}); 
 var tl = new TimelineMax({repeat: -1});
 tl.to(colon, 0.1, {scaleX:0, transformOrigin: "50% 50%"}, "+=3.5")
 .to(colon, 0.1, {scaleX:1, transformOrigin: "50% 50%"})
