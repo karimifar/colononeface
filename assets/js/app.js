@@ -331,7 +331,7 @@ TweenLite.set(one, {
   x: oneX,
   y: oneY
 });
-$(document).on("mousemove click touchstart" , function(event){
+$(document).on("mousemove click touch" , function(event){
     var svgW = document.getElementById("svgDiv").offsetWidth;
     var svgH = document.getElementById("svgDiv").offsetHeight;
     maxX = window.innerWidth;
