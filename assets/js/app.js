@@ -313,11 +313,11 @@ var face = document.querySelector("#face");
 var maxX = window.innerWidth;
 var maxY = window.innerHeight;
 
-var startX= 135;
+var startX= 132;
 var startY= 195;
 
-var oneX= 120;
-var oneY= 240;
+var oneX= 122;
+var oneY= 235;
 
 TweenLite.set(colon, {
   transformOrigin: "center",

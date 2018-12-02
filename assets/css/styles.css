@@ -27,7 +27,7 @@ a:hover{
     right: 0 ;
     top: 0px;
     font-size: 36px;
-    color: #999;
+    color: #D32A08;
     margin-bottom: -16px;
     background-color: white;
     width: fit-content;
@@ -43,7 +43,7 @@ h2.title{
     font-size: 20px;
     font-weight: 900;
     margin-bottom: 5px;
-    border-left: #ddd 6px solid;
+    border-left: #D32A08 6px solid;
     padding-left: 10px;
     height: 24px;
 }
@@ -73,7 +73,7 @@ p.subtitle{
     stroke-miterlimit:10;
 }
 .type{
-    font-family:'Amatic SC';
+    font-family:'Merriweather';
     font-size:111.0161px;
     letter-spacing:-3;
     text-shadow: white 0px 0px 4px;
@@ -272,21 +272,21 @@ h1{
 
 .footer{
     position: fixed;
-    right: 10%;
+    left: 10%;
     bottom:0;
     height:25px;
     margin:0;
     background: black;
 }
 .copyright{
-    text-align: right;
+    text-align: left;
     background: black;
     color: white;
     padding: 5px;
     font-size: 12px;
     margin: 0;
     width:120px;
-    padding:5px 8px 5px 5px;
+    padding:5px 5px 5px 8px;
     z-index: 0;
 }
 
