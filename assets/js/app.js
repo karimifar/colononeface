@@ -16,7 +16,6 @@ var fontArray = [
     "Lucida Sans",
     "Lucida Console",
     "Tahoma",
-    "Trebuchet MS",
     "Gill",
     "Gill Sans",
     "Gill Sans MT",
@@ -135,27 +134,53 @@ var fontArray = [
     "Vivaldi",
     "Vladimir Script",
     "Wide Latin",
-    "Zapfino",
-    "Merriweather"
 ]
 
-var externalFonts= [
-    "Museo-sans",
-    "Museo-sans-rounded",
-    "Nimbus-sans",
-    "Fatfrank",
-    "Rucksack",
-    "Shackleton",
-    "Cooper-black-std",
-]
 var availableFonts= [
     "Museo-sans",
     "Museo-sans-rounded",
-    "Nimbus-sans",
     "Fatfrank",
     "Rucksack",
     "Shackleton",
     "Cooper-black-std",
+    "Piepie",
+    "Cowboyslang",
+    "Hatch",
+    "Paralucent",
+    //google fonts:
+    "Unlock",
+    "Montserrat",
+    "Text Me One",
+    "Black Han Sans",
+    "Kumar One Outline",
+    "Josefin Sans",
+    "Lobster",
+    "Gamja Flower",
+    "Dancing Script",
+    "Amatic SC",
+    "Teko",
+    "Crete Round",
+    "Cormorant Upright",
+    "Patua One",
+    "Poiret One",
+    "Sacramento",
+    "Monoton",
+    "Architects Daughter",
+    "Bungee",
+    "Carter One",
+    "Shadows Into Light Two",
+    "Playball",
+    "Coustard",
+    "Berkshire Swash",
+    "Freckle Face",
+    "Six Caps",
+    "Rozha One",
+    "Fondamento",
+    "League Script",
+    "Italiana",
+    "Raleway",
+    "Merriweather",
+    "Lora"
 ]
 var Detector = function() {
 // a font will be compared against all the three default fonts.
@@ -173,6 +198,7 @@ var h = document.getElementsByTagName("body")[0];
 
 // create a SPAN in the document to get the width of the text we use to test
 var s = document.createElement("span");
+console.log(s,h)
 s.style.fontSize = testSize;
 s.innerHTML = testString;
 var defaultWidth = {};
@@ -233,7 +259,7 @@ detectAppendListen();
 
 
 function createOption(font){
-    var option = $("<li class='font-option' data-value='"+font+"'>"+font +"</li>");
+    var option = $("<li class='font-option' data-value='"+font+"' style='font-family:"+font+";'>" +font +"</li>");
     $("#selectFont").append(option)
 }
 
@@ -311,7 +337,7 @@ $(document).on("mousemove click" , function(event){
     maxX = window.innerWidth;
     maxY = window.innerHeight;
     var colonX = 0.15*maxX + 0.1*svgW + 0.59*0.8*svgW
-    var colonY = 0.15*maxX + 0.57*svgH 
+    var colonY = 0.2*maxX + 0.57*svgH 
 
     console.log(colonX,colonY)
     var x = event.clientX;
@@ -320,11 +346,11 @@ $(document).on("mousemove click" , function(event){
 
     var moveX = (x-colonX)/15
     var moveY = (y-colonY)/10
-    if(moveY<= -18){
-        moveY= -18
+    if(moveY<= -24){
+        moveY= -24
     }
-    if(moveY >= 30){
-        moveY=30
+    if(moveY >= 36){
+        moveY=36
     }
     if(moveX<= -30){
         moveX= -30
@@ -332,7 +358,7 @@ $(document).on("mousemove click" , function(event){
     if(moveX >= 45){
         moveX=45
     }
-    console.log("YOOO",moveX, moveY)
+    // console.log("YOOO",moveX, moveY)
     // $("#colon").css({
     //     transform:" matrix(0, 1, -1, 0,"+ 112.8842+moveX +","+ 134.6087+moveY+")"
     // });
@@ -350,10 +376,10 @@ $(document).on("mousemove click" , function(event){
 
 })
 function closeModalAnimation(){
-    TweenLite.to("#info-modal", 0.3, {scale:0, opacity:0, transformOrigin:"50% 90%", ease: Back.easeIn})
+    TweenLite.to("#info-modal", 0.3, {scale:0, opacity:0, transformOrigin:"120% -30%", ease: Back.easeIn})
 }
 function openModalAnimation(){
-    TweenLite.fromTo("#info-modal", 0.2, {scale:0, delay:0.1, transformOrigin:"50% 90%"},{scale:1, opacity:1, ease:Power4.easeOut})
+    TweenLite.fromTo("#info-modal", 0.2, {scale:0, delay:0.1},{scale:1, opacity:1, ease:Power4.easeOut})
 }
 $("#info-icon").on("click", function(){
     $(".modal-overlay").toggleClass("closed")
@@ -372,7 +398,7 @@ $("#info-icon").on("click", function(){
 $('html').click(function(e) {                    
    if(!$(e.target).hasClass('info-modal') && !$(e.target).hasClass("info-icon"))
    {
-       console.log($(e.target))
+    //    console.log($(e.target))
         if (!$("#info-modal").hasClass("closed")){
             $(".modal-overlay").toggleClass("closed")
             closeModalAnimation();

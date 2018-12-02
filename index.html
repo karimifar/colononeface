@@ -15,19 +15,24 @@
         <script src="assets/js/TweenMax.min.js"></script>
         <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://use.typekit.net/hwv4xzy.css">        
+        <link rel="stylesheet" href="https://use.typekit.net/hwv4xzy.css">
+        <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Architects+Daughter|Berkshire+Swash|Black+Han+Sans|Bungee|Carter+One|Cormorant+Upright|Coustard|Crete+Round|Dancing+Script|Fondamento|Freckle+Face|Gamja+Flower|Italiana|Josefin+Sans|Kumar+One+Outline|League+Script|Lobster|Lora|Merriweather|Monoton|Montserrat|Patua+One|Playball|Poiret+One|Raleway|Rozha+One|Sacramento|Shadows+Into+Light+Two|Six+Caps|Teko|Text+Me+One|Unlock" rel="stylesheet">        
         <link rel="stylesheet" href="assets/css/reset.css">
         <link rel="stylesheet" href="assets/css/styles.css">
 
     </head>
     <body>
-        <div class="wrap-body">
+        <div class="wrap-all">
+            <div class="info">
+                <div class="title-div">
+                    <h2 class="title">Colon-One Face</h2>
+                    <p class="subtitle type">Where typefaces <br>literally make faces!</p>
+                </div>
+                <i class="far fa-question-circle info-icon" id="info-icon"></i>
+            </div>
             <div class="wrapper">
-                <!-- <div class="info">
-                    <i class="far fa-question-circle info-icon"></i>
-                </div> -->
                 <div id="svgDiv">
-                    <svg x="0px" y="0px" viewBox="0 0 227.9 263.1" style="enable-background:new 0 0 227.9 263.1;" xml:space="preserve">
+                    <svg x="0px" y="0px" viewBox="0 0 227.9 300" style="enable-background:new 0 0 227.9 263.1;" xml:space="preserve">
                         
                         <g id="face">
                             <!-- <path class="face-line" d="M166.8,103c15.8,19.7,21,45.8,16.9,74.8"/>
@@ -45,41 +50,40 @@
                 </div><!--
             --><div id="listDiv">
                     <ul id='selectFont' tabindex="1">
-                        <li class="init" tabindex="2">Times New Roman</li>
+                        <li class="init type" tabindex="2">Amatic SC</li>
                     </ul>
                 </div>
             </div>
 
-        </div>
 
-        <div class="info">
-                <i class="far fa-question-circle info-icon" id="info-icon"></i>
-        </div>
-        <div class="modal-overlay closed" id="modal-overlay"></div>
+            <div class="modal-overlay closed" id="modal-overlay"></div>
 
-        <div id="info-modal" class="info-modal closed">
+            <div id="info-modal" class="info-modal closed">
                 <i class="far fa-times-circle close-btn"></i>
                 <div class="info-modal info-modal-wrap">
-                <div class="info-modal col left-col type">
-                    <h1 class="info-modal">What is this?</h1>
-                    <p class="info-modal">It is an interactive experience to prove how fonts can change the entire impression of a piece of text.</p>
+                    <div class="info-modal col left-col type">
+                        <h1 class="info-modal">What is this?</h1>
+                        <p class="info-modal">It is an interactive experience to prove how fonts can change the entire impression of a piece of text.</p>
 
-                    <p class="info-modal">The eyes and mouth of the drawing are typographic characters (:1) allowing the user to change their fonts and make different faces. </p>
+                        <p class="info-modal">The eyes and mouth of the drawing are typographic characters (:1) allowing the user to change their fonts and make different faces. </p>
 
-                </div><!--
-             --><div class="info-modal col right-col type">
-                    <h1 class="info-modal">Fonts </h1>
-                    <p class=" info-modal">The fonts used in the project are from <a href="fonts.adobe.com" target="_blank">Adobe</a>, <a href="fonts.google.com" target="_blank">Google</a> and your computer! (it detects some of the fonts you have installed on your system and adds them to the list)</p>
-    
-                    <p class=" info-modal credit-p">Design & development:  <strong><br>Mohamad ‘Em’ Karimifar</strong></p>
-                        
-                    <p class=" info-modal">For any questions, ideas or just saying Hi! get in touch at <a class="info-modal" href="mailto: em.karimifar@gmail.com" target="_blank">em.karimifar@gmail.com</a></p>
+                    </div><!--
+                --><div class="info-modal col right-col type">
+                        <h1 class="info-modal">Fonts </h1>
+                        <p class=" info-modal">The fonts used in the project are from <a href="https://fonts.adobe.com" target="_blank">Adobe</a>, <a href="https://fonts.google.com" target="_blank">Google</a> and your computer! (it detects some of the fonts you have installed on your system and adds them to the list)</p>
+        
+                        <p class=" info-modal credit-p">Design & development:  <strong><br>Mohamad ‘Em’ Karimifar</strong></p>
+                            
+                        <p class=" info-modal">For any questions, ideas or just saying Hi! get in touch at <a class="info-modal" href="mailto: em.karimifar@gmail.com" target="_blank">em.karimifar@gmail.com</a></p>
 
+                    </div>  
                 </div>
-                
-                
             </div>
+
         </div>
+        
+        <div class="footer"><p class="copyright">&copy; Em Karimifar</p></div>
+
     </body>
     <script src="assets/js/app.js"></script>
 </html>

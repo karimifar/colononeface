@@ -1,5 +1,6 @@
-.wrap-body{
-    padding: 0 20%;
+.wrapper{
+    padding: 10%;
+    padding-top: 50px;
 }
 *{
     box-sizing: border-box;
@@ -8,18 +9,25 @@
 a{
     color: unset;
     text-decoration: none;
+    opacity: 0.5;
 }
-.wrapper{
-    margin-top: 20%;
+a:hover{
+    opacity: 1;
 }
+/* .wrapper{
+    margin-top: 10%;
+} */
 
 #info-icon{
     padding: 4px;
     margin: 0 auto;
-    text-align: center;
-    display: block;
-    font-size: 24px;
-    color: #555;
+    text-align: right;
+    display: inline-block;
+    position: absolute;
+    right: 0 ;
+    top: 0px;
+    font-size: 36px;
+    color: #999;
     margin-bottom: -16px;
     background-color: white;
     width: fit-content;
@@ -29,14 +37,30 @@ a{
 #info-icon:hover{
     transform: scale(1.2);
     transform-origin: 50% 50%;
+    color: black;
 }
-
+h2.title{
+    font-size: 20px;
+    font-weight: 900;
+    margin-bottom: 5px;
+    border-left: #ddd 6px solid;
+    padding-left: 10px;
+    height: 24px;
+}
+p.subtitle{
+    font-size: 60px;
+    margin-bottom: 5px;
+    margin-top: 10px;
+    max-width:650px;
+    white-space: nowrap;
+    text-shadow: none;
+}
 .info{
     position: relative;
     z-index: 49;
     margin: 0% auto;
-    margin-top: 5%;
-    width: 300px;
+    margin-top: 40px;
+    width: 80%;
     border-bottom: #ddd 1px solid;
 }
 
@@ -49,7 +73,7 @@ a{
     stroke-miterlimit:10;
 }
 .type{
-    font-family:'Times New Roman';
+    font-family:'Amatic SC';
     font-size:111.0161px;
     letter-spacing:-3;
     text-shadow: white 0px 0px 4px;
@@ -72,10 +96,10 @@ a{
 #listDiv{
     display: inline-block;
     width: 55%;
-    padding-top: 18%;
+    padding-top: 17%;
     vertical-align: top;
     transition: all 0.3s ease-in-out;
-    max-width: 360px;
+    margin: auto;
 }
 
 
@@ -83,12 +107,16 @@ ul {
     width: 100%;
     /* border-bottom: 1px #000 solid; */
     padding: 10px;
-    margin: 0;
+    margin: auto;
     font-size: 26px;
     max-height: 300px;
+    max-width: 500px;
+    margin-left: 5%;
     overflow: auto;
     transition: all 0.1s ease-in-out;
     background: black;
+    z-index: 10;
+    position: relative;
 }
 
 ul:focus, li:focus{
@@ -126,7 +154,7 @@ li.init {
     padding: 5px 10px;
     background: white;
     color: black;
-    font-weight: 900;
+    /* font-weight: 900; */
     font-size: 36px;
     height: 44px;
     overflow: hidden;
@@ -137,6 +165,7 @@ li.init {
 
 /* width */
 ::-webkit-scrollbar {
+    display: none;
     width: 15px;
     padding: 0;
 }
@@ -241,10 +270,40 @@ h1{
       transform-origin: 50% 50%;
   }
 
+.footer{
+    position: fixed;
+    right: 10%;
+    bottom:0;
+    height:25px;
+    margin:0;
+    background: black;
+}
+.copyright{
+    text-align: right;
+    background: black;
+    color: white;
+    padding: 5px;
+    font-size: 12px;
+    margin: 0;
+    width:120px;
+    padding:5px 8px 5px 5px;
+    z-index: 0;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+  }
+.wrap-all {
+    min-height: 100%;
+}
+
+
 
 @media only screen and (max-width: 1000px) and (min-width: 700px){
     ul{
         font-size: 18px;
+        margin-left: unset;
     }
     li.init{
         font-size: 24px;
@@ -256,6 +315,10 @@ h1{
     }
     #listDiv{
         width: 50%;
+        padding-top: 19%;
+    }
+    p.subtitle{
+        font-size: 50px;
     }
 
 }
@@ -274,9 +337,9 @@ h1{
     .left-col{
         padding-bottom: 0;
     }
-    .info{
+    /* .info{
         width:200px;
-    }
+    } */
     #svgDiv{
         width:100%;
         margin:0;
@@ -284,10 +347,32 @@ h1{
     #listDiv{
         width:100%;
         max-width: unset;
-        padding-top: 10%;
+        padding-top: 0;
+        /* background: red; */
+        margin-top: -10%;
+    }
+    ul{
+        margin-left: 0;
+    }
+    p.subtitle{
+        font-size: 42px;
+        white-space: pre-wrap;
+    }
+    .footer{
+        position: unset;
+        margin-top: -25px;
+    }
+    .copyright{
+        width:100%;
+        text-align: center;
     }
 }
 @media only screen and (max-width: 500px) {
+    p.subtitle{
+        font-size: 28px;
+        white-space: pre-wrap;
+    }
+
     ul{
         font-size: 14px;
     }
@@ -295,7 +380,7 @@ h1{
         font-size: 18px;
         height: 28px;
     }
-    .wrap-body{
+    .wrapper{
         padding: 0 12%;
     }
 }
