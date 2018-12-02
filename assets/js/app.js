@@ -331,7 +331,7 @@ TweenLite.set(one, {
   x: oneX,
   y: oneY
 });
-$(document).on("mousemove click" , function(event){
+$(document).on("mousemove click touchstart" , function(event){
     var svgW = document.getElementById("svgDiv").offsetWidth;
     var svgH = document.getElementById("svgDiv").offsetHeight;
     maxX = window.innerWidth;
@@ -413,3 +413,9 @@ tl.to(colon, 0.1, {scaleX:0, transformOrigin: "50% 50%"}, "+=3.5")
 .to(colon, 0.1, {scaleX:1, transformOrigin: "50% 50%"})
 .to(colon, 0.1, {scaleX:0, transformOrigin: "50% 50%"}, "+=6")
 .to(colon, 0.1, {scaleX:1, transformOrigin: "50% 50%"})
+
+
+
+// $(document).on("click" , function(event){
+//     alert("YO")
+// });
