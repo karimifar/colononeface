@@ -337,9 +337,9 @@ html, body {
     .left-col{
         padding-bottom: 0;
     }
-    /* .info{
-        width:200px;
-    } */
+    .info{
+        width: 92%;
+    }
     #svgDiv{
         width:100%;
         margin:0;
@@ -350,6 +350,7 @@ html, body {
         padding-top: 0;
         /* background: red; */
         margin-top: -10%;
+        margin-bottom: 70px;
     }
     ul{
         margin-left: 0;
