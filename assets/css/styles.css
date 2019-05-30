@@ -17,15 +17,30 @@ a:hover{
 /* .wrapper{
     margin-top: 10%;
 } */
-
+#buttonsDiv{
+    position: absolute;
+    right: 0 ;
+    top: 0px;
+    vertical-align: middle;
+}
+#buttonsDiv i{
+    /* display: block; */
+}
+.social-icon{
+    cursor: pointer;
+    transition: all 0.1s ease-in-out;
+    font-size: 18px;
+    padding: 3px;
+}
+.social-icon:hover{
+    transform: scale(1.2);
+    transform-origin: 50% 50%;
+}
 #info-icon{
     padding: 4px;
     margin: 0 auto;
     text-align: right;
     display: inline-block;
-    position: absolute;
-    right: 0 ;
-    top: 0px;
     font-size: 36px;
     color: #D32A08;
     margin-bottom: -16px;
@@ -297,7 +312,6 @@ html, body {
 .wrap-all {
     min-height: 100%;
 }
-
 
 
 @media only screen and (max-width: 1000px) and (min-width: 700px){

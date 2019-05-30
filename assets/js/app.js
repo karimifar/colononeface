@@ -198,7 +198,7 @@ var h = document.getElementsByTagName("body")[0];
 
 // create a SPAN in the document to get the width of the text we use to test
 var s = document.createElement("span");
-console.log(s,h)
+// console.log(s,h)
 s.style.fontSize = testSize;
 s.innerHTML = testString;
 var defaultWidth = {};
@@ -221,7 +221,7 @@ function detect(font) {
         h.removeChild(s);
         detected = detected || matched;
     }
-    console.log(font,detected, fontCount)
+    // console.log(font,detected, fontCount)
     return detected;
 }
 
@@ -339,10 +339,10 @@ $(document).on("mousemove click touch" , function(event){
     var colonX = 0.15*maxX + 0.1*svgW + 0.59*0.8*svgW
     var colonY = 0.2*maxX + 0.57*svgH 
 
-    console.log(colonX,colonY)
+    // console.log(colonX,colonY)
     var x = event.clientX;
     var y = event.clientY;
-    console.log(x,y)
+    // console.log(x,y)
 
     var moveX = (x-colonX)/15
     var moveY = (y-colonY)/10
@@ -419,3 +419,23 @@ tl.to(colon, 0.1, {scaleX:0, transformOrigin: "50% 50%"}, "+=3.5")
 // $(document).on("click" , function(event){
 //     alert("YO")
 // });
+
+
+var url= "http://www.colononeface.com/" // window.location.href
+
+$("#fb-share").on("click", function(){
+    // console.log(url)
+    window.open('https://www.facebook.com/sharer/sharer.php?u=' + url,
+    'facebook-share-dialog',
+    'width=600,height=400'
+    );
+    return false;
+})
+$("#twitter-share").on("click", function(){
+    // console.log(url)
+    window.open("https://twitter.com/intent/tweet?url=" + url,
+    'twitter-share-dialog',
+    'width=600,height=400'
+    );
+    return false;
+})
